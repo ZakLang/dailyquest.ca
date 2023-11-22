@@ -1,11 +1,11 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/dailyquest-ca/cloud-run-source-deploy', '.']
+    args: ['build', '-t', 'gcr.io/dailyquest-ca/my-image', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/dailyquest-ca/cloud-run-source-deploy']
+    args: ['push', 'gcr.io/dailyquest-ca/my-image']
 # Deploy container image to Cloud Run
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
-    args: ['run', 'deploy', 'dailyquestserver', '--image', 'gcr.io/dailyquest-ca/cloud-run-source-deploy', '--region', 'us-west1']
-  images:
-  - gcr.io/dailyquest-ca/cloud-run-source-deploy
+  # - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  #   entrypoint: gcloud
+  #   args: ['run', 'deploy', 'dailyquestserver', '--image', 'gcr.io/dailyquest-ca/my-image', '--region', 'us-west1']
+  # images:
+  # - gcr.io/dailyquest-ca/my-image

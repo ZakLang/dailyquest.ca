@@ -8,4 +8,5 @@ images: [ 'gcr.io/$PROJECT_ID/myimage' ]
   # - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   #   entrypoint: gcloud
   #   args: ['run', 'deploy', 'dailyquestserver', '--image', 'gcr.io/dailyquest-ca/my-image', '--region', 'us-west1']
-
+options:
+  logging: CLOUD_LOGGING_ONLY

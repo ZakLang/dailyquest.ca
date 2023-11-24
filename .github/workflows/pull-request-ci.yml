@@ -2,8 +2,8 @@
 name: Pull Request CI
 
 on:
-  push:
-    branches: [ 3-cleanup-ci-pipeline-for-merges-to-main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   test:

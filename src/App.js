@@ -8,6 +8,9 @@ function App() {
         <h1>Daily Quest</h1>
         <p>Personal Development Blog</p>
       </header>
+      <footer>
+        <p>Forged by Zak Lang</p>
+      </footer>
     </div>
   );
 }

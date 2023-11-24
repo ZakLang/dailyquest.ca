@@ -1,4 +1,5 @@
 import './App.css';
+import Button from 'react-bootstrap/Button';
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
         <h1>Daily Quest</h1>
         <p>Personal Development Blog</p>
       </header>
-      <footer>
+      <footer className="App-footer">
         <p>Forged by Zak Lang</p>
       </footer>
     </div>

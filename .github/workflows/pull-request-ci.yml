@@ -6,8 +6,8 @@ on:
     branches: [ 3-cleanup-ci-pipeline-for-merges-to-main ]
 
 jobs:
-  build:
-    name: Build
+  test:
+    name: Build & Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,15 +18,5 @@ jobs:
       - name: Install dependencies
         id: build
         run: npm install
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '20.x'
-          cache: 'npm'
       - name: Run tests 🧪
         run: npm test

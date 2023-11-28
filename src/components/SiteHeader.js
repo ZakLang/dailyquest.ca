@@ -1,5 +1,4 @@
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo from './Logo';
 
 function SiteHeader(props){
@@ -8,30 +7,23 @@ function SiteHeader(props){
     width: "100%",
     flexFlow: "row wrap"
   }
-  const linkStyle = {
-    color: "inherit" // this is to override the default <a> color
+
+  const handleNavSelect = (eventKey) => {
+    props.onNavSelect(eventKey);
   }
 
   return(
-    <header>
+    <header data-testid="site-header">
       <div className="flex-container" style={containerStyle}>
-        <a href="/" style={linkStyle}>
+        <div onClick={() => props.onNavSelect('home')} style={{cursor: "pointer"}} data-testid="home-link">
           <Logo />
-        </a>
-        <Nav defaultActiveKey="/" as="ul">
-          <Nav.Item as="li">
-            <Nav.Link href="/">About</Nav.Link>
+        </div>
+        <Nav defaultActiveKey="home" as="ul" onSelect={handleNavSelect}>
+          <Nav.Item as="li" data-testid="about-link">
+            <Nav.Link eventKey="about">About</Nav.Link>
           </Nav.Item>
-          <NavDropdown title="Blogs" id="nav-dropdown">
-            <NavDropdown.Item>Relationships</NavDropdown.Item>
-            <NavDropdown.Item>Habits</NavDropdown.Item>
-            <NavDropdown.Item>Discipline</NavDropdown.Item>
-          </NavDropdown>
-          <Nav.Item as="li">
-            <Nav.Link href="/">Research</Nav.Link>
-          </Nav.Item>
-          <Nav.Item as="li">
-            <Nav.Link href="/">Login</Nav.Link>
+          <Nav.Item as="li" data-testid="blogs-link">
+            <Nav.Link eventKey="blogs">Blogs</Nav.Link>
           </Nav.Item>
         </Nav>
       </div>

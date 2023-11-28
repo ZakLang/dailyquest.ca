@@ -23,12 +23,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Save Source Files
-        uses: actions/upload-artifact@v3
-        with:
-          name: src
-          path: ./
-
       - name: Build Application
         run: npm run build
 
@@ -46,11 +40,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Download Source Files
-        uses: actions/download-artifact@v3
-        with:
-          name: src
-          path: ./
+      - name: Install Unit Test Dependencies
+        run: npm i @testing-library/jest-dom @testing-library/react @testing-library/user-event react-scripts
 
       - name: Run Unit Tests
         run: npm test

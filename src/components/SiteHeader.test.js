@@ -1,16 +1,51 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import SiteHeader from './SiteHeader';
+import { act } from 'react-dom/test-utils';
 
 describe('The SiteHeader component', () => {
-  const mockOnNavSelect = jest.fn(x => x);
-  test('Clicking the About link should make one navigation call to "about"', () => {
+
+  const mockOnNavSelect = jest
+    .fn()
+    .mockImplementation((x) => { console.log(x); })
+    .mockName('mockOnNavSelect');
+
+  test('Clicking the Logo should make one navigation call to "home"', async () => {
+    // Arrange
     render(<SiteHeader onNavSelect={mockOnNavSelect}/>);
 
-    const aboutLink = screen.getByTestId("about-link");
-    console.log(aboutLink);
-    aboutLink.click();
+    // Act
+    screen.getByTestId("home-link").click();
 
+    // Assert
     expect(mockOnNavSelect).toHaveBeenCalledTimes(1);
-    // expect(mockOnNavSelect).toHave.toBe('about');
+    expect(mockOnNavSelect).toHaveBeenCalledWith('home');
+  });
+
+  test('Clicking the About link should make one navigation call to "about"', async () => {
+    // Arrange
+    render(<SiteHeader onNavSelect={mockOnNavSelect}/>);
+
+    // Act
+    act(() => {
+      screen.getByTestId("about-link").click();
+    }) 
+
+    // Assert
+    expect(mockOnNavSelect).toHaveBeenCalledTimes(1);
+    expect(mockOnNavSelect).toHaveBeenCalledWith('about');
+  });
+
+  test('Clicking the Blogs link should make one navigation call to "blogs"', async () => {
+    // Arrange
+    render(<SiteHeader onNavSelect={mockOnNavSelect}/>);
+
+    // Act
+    act(() => {
+      screen.getByTestId("blogs-link").click();
+    }) 
+
+    // Assert
+    expect(mockOnNavSelect).toHaveBeenCalledTimes(1);
+    expect(mockOnNavSelect).toHaveBeenCalledWith('blogs');
   });
 });

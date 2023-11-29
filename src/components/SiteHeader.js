@@ -1,32 +1,36 @@
 import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/NavBar';
+import Container from 'react-bootstrap/Container';
 import Logo from './Logo';
 
 function SiteHeader(props){
   
-  const containerStyle = {
-    width: "100%",
-    flexFlow: "row wrap"
-  }
-
-  const handleNavSelect = (eventKey) => {
-    props.onNavSelect(eventKey);
+  const brandStyle = {
+    display: "flex",
+    alignItems: "center",
+    cursor: "pointer"
   }
 
   return(
     <header data-testid="site-header">
-      <div className="flex-container" style={containerStyle}>
-        <div onClick={() => props.onNavSelect('home')} style={{cursor: "pointer"}} data-testid="home-link">
-          <Logo />
-        </div>
-        <Nav defaultActiveKey="home" as="ul" onSelect={handleNavSelect}>
-          <Nav.Item as="li" data-testid="about-link">
-            <Nav.Link eventKey="about">About</Nav.Link>
-          </Nav.Item>
-          <Nav.Item as="li" data-testid="blogs-link">
-            <Nav.Link eventKey="blogs">Blogs</Nav.Link>
-          </Nav.Item>
-        </Nav>
-      </div>
+      <Navbar expand="lg" className="bg-body-tertiary">
+        <Container>
+          <Navbar.Brand onClick={() => props.onNavSelect('home')} style={brandStyle} data-testid="home-link">
+            <Logo />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+            <Nav as="ul" onSelect={(page) => {props.onNavSelect(page)}}>
+              <Nav.Item as="li" >
+                <Nav.Link eventKey="about" data-testid="about-link">About</Nav.Link>
+              </Nav.Item>
+              <Nav.Item as="li" >
+                <Nav.Link eventKey="blogs" data-testid="blogs-link">Blogs</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </header>
   )
 }

@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import Logo from './Logo';
 
 describe('The Logo component', () => {
+
   test('renders the image', () => {
     render(<Logo />);
     const testImage = screen.getByTestId("logo-image");
@@ -9,6 +10,7 @@ describe('The Logo component', () => {
     expect(testImage.alt).toContain("Daily Quest Logo");
     expect(testImage).toBeInTheDocument();
   });
+  
   test('renders the text', () => {
     render(<Logo />);
     const testText = screen.getByTestId("logo-text");

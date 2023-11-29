@@ -1,6 +1,7 @@
-import { render, screen, waitFor } from '@testing-library/react';
-import SiteHeader from './SiteHeader';
+import { render, screen} from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
+import SiteHeader from './SiteHeader';
+
 
 describe('The SiteHeader component', () => {
 

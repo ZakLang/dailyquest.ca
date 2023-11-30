@@ -1,5 +1,9 @@
-div.text-block {
+.text-pre-wrap {
   white-space: pre-wrap;
+}
+
+div.content-width{
+  max-width: 1200px;
 }
 
 .App {
@@ -23,8 +27,9 @@ div.text-block {
   color: #61dafb;
 }
 
-.content-width.container{
-  max-width: 1200px;
+.centered {
+  display: inline-block;
+  margin: auto;
 }
 
 .flex-container {

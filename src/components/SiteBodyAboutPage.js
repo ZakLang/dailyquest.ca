@@ -1,4 +1,7 @@
-
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Figure from 'react-bootstrap/Figure';
 
 function SiteBodyAboutPage() {
 
@@ -10,16 +13,27 @@ I'm sharing my personal experiences and lessons I've learned. While I try to do 
 
 My hope is that through sharing my stories I can help others who want to incrementally level up too but are feeling a little lost.`
 
-  const pageStyle ={
-    textAlign: "left",
-    width: "100%"
-  }
-
   return (
-      <div data-testid="about-page" style={pageStyle}>
-        <h4>{aboutHeading}</h4>
-        <div className="text-block">{aboutBody}</div>
-      </div>
+    <div data-testid="about-page">
+      <Container fluid>
+        <Row>
+          <Col>
+            <h4 className="text-center text-lg-start">{aboutHeading}</h4>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Figure className="float-end" style={{maxWidth:"500px", padding:"30px"}}>
+              <Figure.Image width="100%"
+                            alt="About Me"
+                            src="images/about.jpg"/>
+              <Figure.Caption>Placeholder image</Figure.Caption>
+            </Figure>
+            <div className="text-start text-pre-wrap">{aboutBody}</div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
 

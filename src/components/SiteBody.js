@@ -1,4 +1,3 @@
-import Container from 'react-bootstrap/Container';
 import SiteBodyHomePage from './SiteBodyHomePage';
 import SiteBodyAboutPage from './SiteBodyAboutPage';
 import SiteBodyBlogsPage from './SiteBodyBlogsPage';
@@ -7,7 +6,7 @@ function SiteBody(props) {
 
   const bodyStyle = {
     minHeight: "calc(100vh - 56px)",
-    padding: "12px"
+    padding: "12px 0px 0px 0px"
   }
 
   let activePage;
@@ -29,9 +28,9 @@ function SiteBody(props) {
 
   return (
     <main data-testid="site-body">
-      <Container className="content-width" style={bodyStyle}>
+      <div className="content-width centered" style={bodyStyle}>
         {activePage}
-      </Container>
+      </div>
     </main>
   )
 }

@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: 'Nunito', sans-serif;
+  min-width: 260px;
 }
 
 .App-header {
@@ -16,6 +17,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.content-width.container{
+  max-width: 1200px;
 }
 
 .flex-container {

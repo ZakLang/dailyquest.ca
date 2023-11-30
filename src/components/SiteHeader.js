@@ -13,8 +13,8 @@ function SiteHeader(props){
 
   return(
     <header data-testid="site-header">
-      <Navbar expand="lg" className="bg-body-tertiary">
-        <Container>
+      <Navbar expand="lg" className="bg-body-tertiary navbar-expand-md">
+        <Container className="content-width">
           <Navbar.Brand onClick={() => props.onNavSelect('home')} style={brandStyle} data-testid="home-link">
             <Logo />
           </Navbar.Brand>

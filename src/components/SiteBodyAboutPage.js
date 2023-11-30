@@ -8,6 +8,7 @@ function SiteBodyAboutPage() {
   // TODO: Replace this with a call to the backend
   const aboutHeading = "About Me"
   const aboutBody = `I'm just a dude, grinding out daily quests, trying to level up and become a better version of myself every day.
+
 I'm not focused on some lofty end goals, and I'm not focused on what others are doing or what they think of me. I care only about challenging myself to incrementally get stronger, healthier, more focused and more loving.
 
 I'm sharing my personal experiences and lessons I've learned. While I try to do my research, I may not always be right. You are free to take what you like from my experiences and leave behind anything that doesn't resonate with you.

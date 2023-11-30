@@ -3,7 +3,14 @@ import SiteBodyAboutPage from './SiteBodyAboutPage';
 import SiteBodyBlogsPage from './SiteBodyBlogsPage';
 
 function SiteBody(props) {
+
+  const bodyStyle = {
+    minHeight: "calc(100vh - 56px)",
+    padding: "12px 0px 0px 0px"
+  }
+
   let activePage;
+  
   switch ((props && props.activeBodyPage) ? props.activeBodyPage : 'home') {
     case 'home':
       activePage = SiteBodyHomePage();
@@ -21,7 +28,9 @@ function SiteBody(props) {
 
   return (
     <main data-testid="site-body">
-      {activePage}
+      <div className="content-width centered" style={bodyStyle}>
+        {activePage}
+      </div>
     </main>
   )
 }

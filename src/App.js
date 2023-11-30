@@ -1,4 +1,5 @@
 import './App.css';
+import './margins.css';
 import SiteBody from './components/SiteBody';
 import SiteHeader from './components/SiteHeader';
 import { useState } from 'react';

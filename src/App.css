@@ -1,6 +1,15 @@
+.text-pre-wrap {
+  white-space: pre-wrap;
+}
+
+div.content-width{
+  max-width: 1200px;
+}
+
 .App {
   text-align: center;
   font-family: 'Nunito', sans-serif;
+  min-width: 260px;
 }
 
 .App-header {
@@ -16,6 +25,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.centered {
+  display: inline-block;
+  margin: auto;
 }
 
 .flex-container {

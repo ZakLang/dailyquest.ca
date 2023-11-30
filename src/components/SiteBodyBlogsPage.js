@@ -22,7 +22,7 @@ If you've ridden a similar rollercoaster on your self-improvement journey, maybe
 To everyone else doing the work out there, good luck on your quests.`;
 
   return (
-    <div data-testid="about-page">
+    <div data-testid="blogs-page">
       <Container fluid>
         <Row>
             <h4 className="text-center text-lg-start">{firstPostHeading}</h4>
